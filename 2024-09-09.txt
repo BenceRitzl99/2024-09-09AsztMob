@@ -3,3 +3,69 @@ Argumentumok használata
 Kétféle:
 Kapcsolók pl.: --version
 paraméterek pl.: adat.txt
+
+
+1. equals() metódus
+A leggyakoribb és legmegbízhatóbb módszer a sztringek tartalmának összehasonlítására az equals() metódus használata. 
+Ez a metódus visszaadja, hogy a két sztring tartalma megegyezik-e.
+
+java
+
+
+String str1 = "hello";
+String str2 = "hello";
+
+if (str1.equals(str2)) {
+    System.out.println("A két sztring megegyezik.");
+}
+2. equalsIgnoreCase() metódus
+Ha nem számít a kis- és nagybetűk közötti különbség, akkor az equalsIgnoreCase() metódust használhatod. 
+Ez a metódus figyelmen kívül hagyja a betűk nagy- és kisbetűs formáját.
+
+java
+
+
+String str1 = "Hello";
+String str2 = "hello";
+
+if (str1.equalsIgnoreCase(str2)) {
+    System.out.println("A két sztring megegyezik, figyelmen kívül hagyva a kis- és nagybetűket.");
+}
+3. compareTo() metódus
+A compareTo() metódus a sztringek lexikográfiai összehasonlítására szolgál. Ez a metódus visszaad egy egész számot, 
+amely jelzi, hogy az első sztring kisebb, egyenlő vagy nagyobb a második sztringnél.
+
+java
+
+
+String str1 = "apple";
+String str2 = "banana";
+
+int result = str1.compareTo(str2);
+if (result < 0) {
+    System.out.println("Az 'apple' kisebb, mint a 'banana'.");
+} else if (result > 0) {
+    System.out.println("Az 'apple' nagyobb, mint a 'banana'.");
+} else {
+    System.out.println("A két sztring megegyezik.");
+}
+4. == operátor (nem ajánlott)
+Ahogy korábban említettem, az == operátor használata nem ajánlott sztringek esetén, mivel az csak a referencia összehasonlítást végzi. 
+Az alábbi példa bemutatja, hogy miért nem működik ez a módszer:
+
+java
+
+
+String str1 = new String("hello");
+String str2 = new String("hello");
+
+if (str1 == str2) {
+    System.out.println("A két sztring megegyezik.");
+} else {
+    System.out.println("A két sztring eltér.");
+}
+A fenti kód kimenete "A két sztring eltér." lesz, mert a str1 és str2 különböző objektumok a memóriában.
+Összegzés
+A Java nyelvben a sztringek összehasonlítására a legjobb módszer az equals() metódus használata, 
+míg az == operátor használata kerülendő, mivel az nem a tartalmat, hanem a referenciát hasonlítja össze. Az equalsIgnoreCase() és a compareTo() metódusok 
+további lehetőségeket kínálnak a sztringek összehasonlítására.
