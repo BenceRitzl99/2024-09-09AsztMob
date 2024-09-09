@@ -1,0 +1,5 @@
+Argumentumok használata
+
+Kétféle:
+Kapcsolók pl.: --version
+paraméterek pl.: adat.txt
